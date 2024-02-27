@@ -17,17 +17,157 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #fff;
+  background-color: #000; 
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* whatsapp button */
+.btn-whatsapp-pulse {
+  background: #4ac659;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 40px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  height: 0;
+  padding: 35px;
+  text-decoration: none;
+  border-radius: 50%;
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  z-index: 5000;
+}
+
+.btn-whatsapp-pulse:hover {
+  background: #fff;
+  color: #4ac659;
+}
+
+.btn-whatsapp-pulse-Scroll {
+  display: flex;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(19, 26, 21, 0.5);
+  }
+  80% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+.btn-whatsapp-pulse i {
+  animation-name: tossing;
+  -webkit-animation-name: tossing;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite
+}
+
+
+@keyframes tossing {
+  0% {
+    -webkit-transform: rotate(-8deg);
+    transform: rotate(-8deg)
+  }
+  50% {
+    -webkit-transform: rotate(8deg);
+    transform: rotate(8deg)
+  }
+  100% {
+    -webkit-transform: rotate(-8deg);
+    transform: rotate(-8deg)
+  }
+}
+
+@-webkit-keyframes tossing {
+  0% {
+    -webkit-transform: rotate(-8deg)
+  }
+  50% {
+    -webkit-transform: rotate(8deg)
+  }
+  100% {
+    -webkit-transform: rotate(-8deg)
+  }
+}
+
+.btn-whatsapp-pulse-border {
+  bottom: 120px;
+  right: 20px;
+  animation-play-state: paused;
+}
+
+.btn-whatsapp-pulse-border::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  padding: 25px;
+  border: 5px solid #4ac659;
+  opacity: 0.75;
+  animation-name: pulse-border;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse-border {
+  0% {
+    padding: 25px;
+    opacity: 0.75;
+  }
+  75% {
+    padding: 50px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.custom-scroll {
+  /* Customize the scrollbar width, height, and color */
+  scrollbar-width: thin;
+  scrollbar-color: #000 #000;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  height: 300px; /* Set the height of the scrollable area */
+  /* Add more custom styles as needed */
+}
+
+/* styles.css */
+.custom-scroll {
+  /* Customize scrollbar width and color */
+  scrollbar-width: thin;
+  scrollbar-color: #fff #000;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  height: 480px; /* Set the height of the scrollable area */
+  /* Add more custom styles as needed */
+}
+
+/* Customize scrollbar track and thumb */
+.custom-scroll::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #000; /* Set the color of the scrollbar thumb */
+  border-radius: 4px; /* Set the border radius of the scrollbar thumb */
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background-color: #000; /* Set the color of the scrollbar track */
 }
